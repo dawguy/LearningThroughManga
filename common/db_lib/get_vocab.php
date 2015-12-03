@@ -3,6 +3,7 @@
 function get_vocab( $pk_vocab )
 {
     $retval = array(
+        'vocab' => 1,
         'english' => 'Hello',
         'korean'  => '안녕하세요',
         'english_definition' => 'A greeting used between people',
