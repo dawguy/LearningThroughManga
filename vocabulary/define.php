@@ -6,69 +6,74 @@
 if( !isset( $_REQUEST['word'] ) &&
     !is_integer_positive( $_REQUEST['word'] )
   )
-    {
-        require_once( '../404.php' );
-        exit;
-    }
+{
+    require_once( '../404.php' );
+    exit;
+}
 
-    $pk_vocab = $_REQUEST['word'];
-    $vocab_definition = get_vocab( $_REQUEST['word'] );
+$pk_vocab = $_REQUEST['word'];
+$vocab_definition = get_vocab( $_REQUEST['word'] );
 
-    if( !isset( $vocab_definition['manga_context'] ) )
-    {
-        require_once( '../404.php' );
-        exit;
-    }
+if( !isset( $vocab_definition['manga_context'] ) )
+{
+    require_once( '../404.php' );
+    exit;
+}
 
-    $pk_manga_context = $vocab_definition['manga_context'];
-    $manga_context = get_manga_context( $vocab_definition['manga_context'] );
-    $height = 200;
-    $width = 200;
+$pk_manga_context = $vocab_definition['manga_context'];
+$manga_context = get_manga_context( $vocab_definition['manga_context'] );
+$height = 200;
+$width = 200;
 ?>
+
 <html>
     <html>
         <title>Definition</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     </html>
     <body>
-        <div id="nav_bar">
-            <ul>
-                <li><a href="vocabulary/index.php">Vocabulary</a></li>
-                <li><a href="manga/index.php">Manga</a></li>
-                <li><a href="blog/index.php">Blog</a></li>
-            </ul>
-        </div>
-        <div id="content">
-            <div class="word_title" id="words">
-                <div id="english_word">
-                    <?= $vocab_definition['english'] ?>
-                </div>
-                <div id="korean_word">
-                    <?= $vocab_definition['korean'] ?>
-                </div>
-            </div>
+        <? require_once( $_SERVER['DOCUMENT_ROOT'] . 'LearningThroughManga' . '/common/includes/header.php' ); ?>
 
-            <div id="manga_page">
-                <div id="manga_panel">
-                <img src="<?= $manga_context['path'] ?>" alt="<?= $vocab_definition['english']?>" height="<?= $height ?>" width="<?= $width ?>">
+        <div class="container">
+            <div class="container text-center">
+                <div class="container" >
+                    <div class="container">
+                        <div id="manga_panel">
+                            <img src="<?= $manga_context['path'] ?>" alt="<?= $vocab_definition['english']?>" height="<?= $height ?>" width="<?= $width ?>">
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div id="manga_panel_meaning">
+                            <?= $manga_context['meaning'] ?>
+                        </div>
+                        <div id="manga_panel_context">
+                            <?= $manga_context['context'] ?>
+                        </div>
+                        <div id="manga_panel_takeaway">
+                            <?= $manga_context['takeaway'] ?>
+                        </div>
+                    </div>
                 </div>
-                <div id="manga_panel_meaning">
-                    <?= $manga_context['meaning'] ?>
-                </div>
-                <div id="manga_panel_context">
-                    <?= $manga_context['context'] ?>
-                </div>
-                <div id="manga_panel_takeaway">
-                    <?= $manga_context['takeaway'] ?>
-                </div>
-            </div>
 
-            <div id="definitions">
-                <div id="korean_definition">
-                    <?= $vocab_definition['english_definition'] ?>
-                </div>
-                <div id="english_definition">
-                    <?= $vocab_definition['korean_definition'] ?>
+                <div class="row" style="margin-top: 20px">
+                    <div class="col-md-6">
+                        <div id="korean_word">
+                            <b><?= $vocab_definition['korean'] ?></b>
+                        </div>
+                        <div id="korean_definition">
+                            <?= $vocab_definition['korean_definition'] ?>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div id="english_word">
+                            <b><?= $vocab_definition['english'] ?></b>
+                        </div>
+                        <div id="english_definition">
+                            <?= $vocab_definition['english_definition'] ?>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

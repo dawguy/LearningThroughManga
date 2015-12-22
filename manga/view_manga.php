@@ -1,6 +1,5 @@
 <?php
-    $manga_root = '/LearningThroughManga';
-    require_once( $_SERVER['DOCUMENT_ROOT'] . $manga_root . '/manga/includes/index.php' );
+    require_once( $_SERVER['DOCUMENT_ROOT'] . 'manga/includes/index.php' );
 ?>
 <html>
     <head>
@@ -8,13 +7,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     </head>
     <body>
-        <div id="nav_bar">
-            <ul>
-                <li><a href="vocabulary/index.php">Vocabulary</a></li>
-                <li><a href="manga/index.php">Manga</a></li>
-                <li><a href="blog/index.php">Blog</a></li>
-            </ul>
-        </div>
+        <? require_once( $_SERVER['DOCUMENT_ROOT'] . '/common/includes/header.php' ); ?>
         <div id="manga">
         </div>
     </body>

@@ -1,36 +1,36 @@
 <?php
     $manga_root = '/LearningThroughManga';
     require_once( $_SERVER['DOCUMENT_ROOT'] . $manga_root . '/vocabulary/includes/index.php' );
-    $pk_vocab = 1;
-    $vocab_manga = 'Test';
+    require_once( $_SERVER['DOCUMENT_ROOT'] . $manga_root . '/common/db_lib/get_vocab_list.php' );
+    $word_rows = get_vocab_list();
+
 ?>
 <html>
     <head>
         <title>Vocabulary</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     </head>
     <body>
-        <div id="nav_bar">
-            <ul>
-                <li><a href="vocabulary/index.php">Vocabulary</a></li>
-                <li><a href="manga/index.php">Manga</a></li>
-                <li><a href="blog/index.php">Blog</a></li>
-            </ul>
-        </div>
-        <div id="vocabulary_list">
-            <table class="vocab_table" id="vocabulary_table">
-                <thead>
-                    <tr>
-                        <th>English</th>
-                        <th>Korean</th>
-                        <th>Definition</th>
-                        <th>Detailed</th>
-                    </tr>
-                </thead>
-                <tbody style="text-align: center;">
-                    <?php generate_word_row( 1 ); ?>
-                </tbody>
-            </table>         
+        <div>
+        <? require_once( $_SERVER['DOCUMENT_ROOT'] . 'LearningThroughManga' . '/common/includes/header.php' ); ?>
+            <div id="vocabulary_list" class="container">
+                <div class="row">
+                    <div class="col-md-2">
+                        <h3>Korean</h3>
+                    </div>
+                    <div class="col-md-2">
+                        <h3>English</h3>
+                    </div>
+                    <div class="col-md-4">
+                        <h3>Definition</h3>
+                    </div>
+                    <div class="col-md-4">
+                        <h3>Manga Context</h3>
+                    </div>
+                </div>
+                <?php generate_word_rows( $word_rows ); ?>
+            </div>
         </div>
     </body>
 </html>

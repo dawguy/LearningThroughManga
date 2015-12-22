@@ -5,15 +5,8 @@
 
     <head>
     </head>
-
     <body>
-        <div id="nav_bar">
-            <ul>
-                <li><a href="vocabulary/index.php">Vocabulary</a></li>
-                <li><a href="manga/index.php">Manga</a></li>
-                <li><a href="blog/index.php">Blog</a></li>
-            </ul>
-        </div>
+        <? require_once( $_SERVER['DOCUMENT_ROOT'] . '/LearningThroughManga' . '/common/includes/header.php' ); ?>
         
         <div id="content">
             Welcome to my blog. The goal is to get a good list of korean vocabulary in the context of manga. This will make both learning words more enjoyable and make remembering the words easier since they will be learnt in context.
