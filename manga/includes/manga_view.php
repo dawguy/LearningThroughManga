@@ -21,6 +21,8 @@ function generate_manga_vocab_rows( $pk_manga )
 
 function generate_manga_vocab_row( $pk_vocab )
 {
+    $vocabulary_url = '/' . 'LearningThroughManga' . '/vocabulary/define.php';
+
     $vocab = get_vocab( $pk_vocab );
     if( !is_array( $vocab ) )
     {
@@ -42,7 +44,7 @@ function generate_manga_vocab_row( $pk_vocab )
             <?= $english_definition ?>
         </div>
         <div class="col-md-4">
-            <a href="define.php?word=<?= $pk_vocab ?>"><?= $vocab_manga ?></a>
+            <a href="<?= $vocabulary_url ?>?word=<?= $pk_vocab ?>"><?= $vocab_manga ?></a>
         </div>
     </div>
 <?php
