@@ -2,6 +2,18 @@
 $manga_root = '/LearningThroughManga';
 require_once( $_SERVER['DOCUMENT_ROOT'] . $manga_root . '/common/db_lib/get_manga.php' );
 
+function generate_manga_rows( $manga_list )
+{
+    foreach( $manga_list as $manga )
+    {
+        if( isset( $manga['manga'] ) )
+        {
+            generate_manga_row( $manga['manga'] );
+        }
+    }
+    return;
+}
+
 function generate_manga_row( $pk_manga )
 {
     $manga = get_manga( $pk_manga );
@@ -18,23 +30,23 @@ function generate_manga_row( $pk_manga )
 
     $tags = implode( $tags, ', ' );
 ?>
-    <tr>
-        <td class="english_title">
-            <?= $english_title ?>
-        </td>
-        <td class="korean_title">
+    <div class="row" style="text-align: center;">
+        <div class="col-md-2">
+            <a href="view_manga.php?manga=<?= $pk_manga ?>"><?= $english_title ?></a>
+        </div>
+        <div class="col-md-2">
             <?= $korean_title ?>
-        </td>
-        <td class="rating">
+        </div>
+        <div class="col-md-2">
             <?= $rating ?>
-        </td>
-        <td class="source">
+        </div>
+        <div class="col-md-3">
             <a href=<?= $manga_source ?>><?= $manga_source ?></a>
-        </td>
-        <td class="tags">
+        </div>
+        <div class="col-md-3">
             <?= $tags ?>
-        </td>
-    </tr>
+        </div>
+    </div>
 <?php
     return;
 }

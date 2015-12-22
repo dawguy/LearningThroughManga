@@ -1,7 +1,8 @@
 <?php
-    require_once( '../common/db_lib/get_vocab.php' );
-    require_once( '../common/db_lib/get_manga_context.php' );
-    require_once( '../common/functions/validation.php' );
+
+require_once( '../common/db_lib/get_vocab.php' );
+require_once( '../common/db_lib/get_manga_context.php' );
+require_once( '../common/functions/validation.php' );
 
 if( !isset( $_REQUEST['word'] ) &&
     !is_integer_positive( $_REQUEST['word'] )
@@ -12,7 +13,7 @@ if( !isset( $_REQUEST['word'] ) &&
 }
 
 $pk_vocab = $_REQUEST['word'];
-$vocab_definition = get_vocab( $_REQUEST['word'] );
+$vocab_definition = get_vocab( $pk_vocab );
 
 if( !isset( $vocab_definition['manga_context'] ) )
 {

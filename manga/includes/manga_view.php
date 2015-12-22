@@ -1,20 +1,25 @@
 <?php
-$manga_root = '/LearningThroughManga';
+require_once( $_SERVER['DOCUMENT_ROOT'] . $manga_root . '/common/functions/validation.php' );
+require_once( $_SERVER['DOCUMENT_ROOT'] . $manga_root . '/common/db_lib/get_manga_vocabs.php' );
 require_once( $_SERVER['DOCUMENT_ROOT'] . $manga_root . '/common/db_lib/get_vocab.php' );
 
-function generate_word_rows( $vocab_list )
+function generate_manga_vocab_rows( $pk_manga )
 {
-    foreach( $vocab_list as $vocab )
+    if( !is_integer_positive( $pk_manga ) )
     {
-        if( isset( $vocab['vocab'] ) )
-        {
-            generate_word_row( $vocab['vocab'] );
-        }
+        return;
+    }
+
+    $manga_vocab_list = get_manga_vocabs( $pk_manga );
+
+    foreach( $manga_vocab_list as $vocab )
+    {
+        generate_manga_vocab_row( $vocab );
     }
     return;
 }
 
-function generate_word_row( $pk_vocab )
+function generate_manga_vocab_row( $pk_vocab )
 {
     $vocab = get_vocab( $pk_vocab );
     if( !is_array( $vocab ) )

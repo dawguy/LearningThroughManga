@@ -7,8 +7,9 @@ function is_integer_positive( $number )
         return false;
     }
 
-    if( !is_int( $number ) )
+    if( !is_numeric( $number ) )
     {
+        error_log( 'NOT IS INT' );
         return false;
     }
 
