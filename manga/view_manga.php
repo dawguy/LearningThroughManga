@@ -42,6 +42,9 @@ if( !isset( $manga['manga'] ) )
                 <?= $manga['korean_description'] ?>
             </div>
             <div class="container">
+                <h3>Vocabulary</h3>
+            </div>
+            <div class="container">
                 <?php generate_manga_vocab_rows( $pk_manga ); ?>
             </div>
         </div>
