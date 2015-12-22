@@ -50,8 +50,8 @@ $width = 200;
                         <div id="manga_panel_context">
                             <?= $manga_context['context'] ?>
                         </div>
-                        <div id="manga_panel_takeaway">
-                            <?= $manga_context['takeaway'] ?>
+                        <div id="manga_panel_usage">
+                            <?= $manga_context['usage'] ?>
                         </div>
                     </div>
                 </div>
