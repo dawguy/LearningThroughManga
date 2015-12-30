@@ -18,7 +18,7 @@
             At some point the blog section of this website will continue to be updated with listings of current manga I am reading and planned updates to the website.
         </div>
         <div class="container" style="margin-top: 20px">
-            The purpose of this website it to share my progress of learning Korean. The goal is to use the context from manga/manhwa to make remembering words easier. If you have any concerns about the content on the website please email me at <a href="mailto:learningthroughmanga@gmail.com">LearningThroughManga AT gmail DOT com</a>  and I will do my best to respond quickly. Images on the site are used purely for educational purposes.
+            The purpose of this website it to share my progress of learning Korean. The goal is to use the context from manga/manhwa to make remembering words easier. If you have any concerns about the content on the website please email me at LearningThroughManga AT gmail DOT com  and I will do my best to respond quickly. Images on the site are used purely for educational purposes.
         </div>
         <div class="container" style="margin-top: 20px">
             Anki Deck of the words included on this website available by emailing me at the above address.
