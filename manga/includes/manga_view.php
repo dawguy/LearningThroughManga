@@ -11,10 +11,10 @@ function generate_manga_vocab_rows( $pk_manga )
     }
 
     $manga_vocab_list = get_manga_vocabs( $pk_manga );
-
+    
     foreach( $manga_vocab_list as $vocab )
     {
-        generate_manga_vocab_row( $vocab );
+        generate_manga_vocab_row( $vocab['vocab'] );
     }
     return;
 }

@@ -17,14 +17,22 @@ with con:
                     english_description TEXT,
                     korean_description  TEXT,
                     rating              INTEGER,
-                    tags                INTEGER,
-                    FOREIGN KEY(tags) REFERENCES tb_tags(tags)
+                    manga_tags          INTEGER,
+                    FOREIGN KEY(manga_tags) REFERENCES tb_manga_tags(manga_tags)
                     )"""
 
     tags_table = """CREATE TABLE tb_tags(
                     tags        INTEGER   NOT NULL    PRIMARY KEY AUTOINCREMENT,
                     english_tag TEXT,
                     korean_tag  TEXT
+                    )"""
+
+    manga_tags_table = """CREATE TABLE tb_manga_tags(
+                    manga_tags        INTEGER   NOT NULL    PRIMARY KEY AUTOINCREMENT,
+                    manga INTEGER,
+                    tags  INTEGER,
+                    FOREIGN KEY(manga) REFERENCES tb_manga(manga),
+                    FOREIGN KEY(tags) REFERENCES tb_tags(tags)
                     )"""
 
     manga_context_table = """CREATE TABLE tb_manga_context(
@@ -49,6 +57,7 @@ with con:
 
     cur.execute( manga_table )
     cur.execute( tags_table )
+    cur.execute( manga_tags_table )
     cur.execute( manga_context_table )
     cur.execute( vocab_table )
     cur.close()

@@ -1,6 +1,7 @@
 <?php
 $manga_root = '/LearningThroughManga';
 require_once( $_SERVER['DOCUMENT_ROOT'] . $manga_root . '/common/db_lib/get_manga.php' );
+require_once( $_SERVER['DOCUMENT_ROOT'] . $manga_root . '/common/db_lib/get_tags_by_manga.php' );
 
 function generate_manga_rows( $manga_list )
 {
@@ -21,14 +22,25 @@ function generate_manga_row( $pk_manga )
     {
         return;
     }
+
     $manga_image   = $manga['image'];
     $english_title = $manga['english_title'];
     $korean_title  = $manga['korean_title'];
     $manga_source  = $manga['source'];
     $rating        = $manga['rating'];
-    $tags          = $manga['tags'];
+    $manga_tags    = $manga['manga_tags'];
 
-    $tags = implode( $tags, ', ' );
+    $tags = get_tags_by_manga( $pk_manga );
+    $english_tags = array();
+    $korean_tags = array();
+
+    foreach( $tags as $tag )
+    {
+        $english_tags[] = $tag['english_tag'];
+        $korean_tags[]  = $tag['korean_tag'];
+    }
+    
+    $tags_string = implode( $english_tags, ', ' );
 ?>
     <div class="row" style="text-align: center;">
         <div class="col-md-2">
@@ -44,7 +56,7 @@ function generate_manga_row( $pk_manga )
             <a href=<?= $manga_source ?>><?= $manga_source ?></a>
         </div>
         <div class="col-md-3">
-            <?= $tags ?>
+            <?= $tags_string ?>
         </div>
     </div>
 <?php
