@@ -1,7 +1,6 @@
 <?php
-    $manga_root = '/LearningThroughManga';
-    require_once( $_SERVER['DOCUMENT_ROOT'] . $manga_root . '/vocabulary/includes/index.php' );
-    require_once( $_SERVER['DOCUMENT_ROOT'] . $manga_root . '/common/db_lib/get_vocab_list.php' );
+    require_once( $_SERVER['DOCUMENT_ROOT'] . '/vocabulary/includes/index.php' );
+    require_once( $_SERVER['DOCUMENT_ROOT'] . '/common/db_lib/get_vocab_list.php' );
     $word_rows = get_vocab_list();
 
 ?>
@@ -13,7 +12,7 @@
     </head>
     <body>
         <div>
-        <? require_once( $_SERVER['DOCUMENT_ROOT'] . 'LearningThroughManga' . '/common/includes/header.php' ); ?>
+        <? require_once( $_SERVER['DOCUMENT_ROOT'] . '/common/includes/header.php' ); ?>
             <div id="vocabulary_list" class="container">
                 <div class="row">
                     <div class="col-md-2">

@@ -1,7 +1,7 @@
 <?php
-require_once( $_SERVER['DOCUMENT_ROOT'] . $manga_root . '/common/functions/validation.php' );
-require_once( $_SERVER['DOCUMENT_ROOT'] . $manga_root . '/common/db_lib/get_manga_vocabs.php' );
-require_once( $_SERVER['DOCUMENT_ROOT'] . $manga_root . '/common/db_lib/get_vocab.php' );
+require_once( $_SERVER['DOCUMENT_ROOT'] . '/common/functions/validation.php' );
+require_once( $_SERVER['DOCUMENT_ROOT'] . '/common/db_lib/get_manga_vocabs.php' );
+require_once( $_SERVER['DOCUMENT_ROOT'] . '/common/db_lib/get_vocab.php' );
 
 function generate_manga_vocab_rows( $pk_manga )
 {
@@ -21,7 +21,7 @@ function generate_manga_vocab_rows( $pk_manga )
 
 function generate_manga_vocab_row( $pk_vocab )
 {
-    $vocabulary_url = '/' . 'LearningThroughManga' . '/vocabulary/define.php';
+    $vocabulary_url = '/vocabulary/define.php';
 
     $vocab = get_vocab( $pk_vocab );
     if( !is_array( $vocab ) )

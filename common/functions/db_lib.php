@@ -3,14 +3,12 @@
 class manga_db extends SQLite3
 {
     private $db_name;
-    private $manga_root;
     private $db_path;
 
     function __construct()
     {
         $db_name = 'learning_korean.db';
-        $manga_root = 'LearningThroughManga';
-        $db_path = $_SERVER['DOCUMENT_ROOT'] . $manga_root . '/learning_korean.db';
+        $db_path = $_SERVER['DOCUMENT_ROOT'] . '/learning_korean.db';
         $this->open( $db_path ); 
     }
 

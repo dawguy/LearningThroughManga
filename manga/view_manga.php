@@ -1,15 +1,14 @@
 <?php
 
-$manga_root = 'LearningThroughManga';
-require_once( $_SERVER['DOCUMENT_ROOT'] . $manga_root . '/manga/includes/manga_view.php' );
-require_once( $_SERVER['DOCUMENT_ROOT'] . $manga_root . '/common/db_lib/get_manga.php' );
-require_once( $_SERVER['DOCUMENT_ROOT'] . $manga_root . '/common/functions/validation.php' );
+require_once( $_SERVER['DOCUMENT_ROOT'] . '/manga/includes/manga_view.php' );
+require_once( $_SERVER['DOCUMENT_ROOT'] . '/common/db_lib/get_manga.php' );
+require_once( $_SERVER['DOCUMENT_ROOT'] . '/common/functions/validation.php' );
 
 if( !isset( $_REQUEST['manga'] ) ||
     !is_integer_positive( $_REQUEST['manga'] )
   )
 {
-    require_once( $_SERVER['DOCUMENT_ROOT'] . $manga_root . '/404.php' ); 
+    require_once( $_SERVER['DOCUMENT_ROOT'] . '/404.php' ); 
     exit;
 }
 
@@ -18,7 +17,7 @@ $manga = get_manga( $pk_manga );
 
 if( !isset( $manga['manga'] ) )
 {
-    require_once( $_SERVER['DOCUMENT_ROOT'] . $manga_root . '/404.php' ); 
+    require_once( $_SERVER['DOCUMENT_ROOT'] . '/404.php' ); 
     exit;
 }
 ?>
@@ -29,7 +28,7 @@ if( !isset( $manga['manga'] ) )
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     </head>
     <body>
-        <? require_once( $_SERVER['DOCUMENT_ROOT'] . 'LearningThroughManga' . '/common/includes/header.php' ); ?>
+        <? require_once( $_SERVER['DOCUMENT_ROOT'] . '/common/includes/header.php' ); ?>
         <div class="container">
             <div class="container">
                 <h2><?= $manga['english_title'] ?></h2>

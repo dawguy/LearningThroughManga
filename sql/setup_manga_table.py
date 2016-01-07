@@ -16,9 +16,7 @@ with con:
                     source              TEXT,
                     english_description TEXT,
                     korean_description  TEXT,
-                    rating              INTEGER,
-                    manga_tags          INTEGER,
-                    FOREIGN KEY(manga_tags) REFERENCES tb_manga_tags(manga_tags)
+                    rating              INTEGER
                     )"""
 
     tags_table = """CREATE TABLE tb_tags(
@@ -39,9 +37,10 @@ with con:
                              manga_context INTEGER   NOT NULL    PRIMARY KEY AUTOINCREMENT,
                              manga         INTEGER,
                              path          TEXT,
+                             image         TEXT,
                              meaning       TEXT,
                              context       TEXT,
-                             usage         TEXT,
+                             translation   TEXT,
                              FOREIGN KEY(manga) REFERENCES tb_manga(manga)
                              )"""
 

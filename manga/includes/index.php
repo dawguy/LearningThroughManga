@@ -1,7 +1,6 @@
 <?php
-$manga_root = '/LearningThroughManga';
-require_once( $_SERVER['DOCUMENT_ROOT'] . $manga_root . '/common/db_lib/get_manga.php' );
-require_once( $_SERVER['DOCUMENT_ROOT'] . $manga_root . '/common/db_lib/get_tags_by_manga.php' );
+require_once( $_SERVER['DOCUMENT_ROOT'] . '/common/db_lib/get_manga.php' );
+require_once( $_SERVER['DOCUMENT_ROOT'] . '/common/db_lib/get_tags_by_manga.php' );
 
 function generate_manga_rows( $manga_list )
 {

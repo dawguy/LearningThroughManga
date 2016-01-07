@@ -3,6 +3,10 @@
 *.csv
 *.db
 
+# Python DB #
+#############
+sql/secrets.py
+
 # Compiled source #
 ###################
 *.com

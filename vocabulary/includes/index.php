@@ -1,6 +1,5 @@
 <?php
-$manga_root = '/LearningThroughManga';
-require_once( $_SERVER['DOCUMENT_ROOT'] . $manga_root . '/common/db_lib/get_vocab.php' );
+require_once( $_SERVER['DOCUMENT_ROOT'] . '/common/db_lib/get_vocab.php' );
 
 function generate_word_rows( $vocab_list )
 {

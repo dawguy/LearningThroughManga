@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     </head>
     <body>
-        <? require_once( $_SERVER['DOCUMENT_ROOT'] . '/LearningThroughManga' . '/common/includes/header.php' ); ?>
+        <? require_once( $_SERVER['DOCUMENT_ROOT'] . '/common/includes/header.php' ); ?>
         
         <div class="container" style="margin-top: 20px">
             Welcome to my blog. The goal is to get a good list of korean vocabulary in the context of manga. This will make both learning words more enjoyable and make remembering the words easier since they will be learned in context which improves the brain's ability to remember them.

@@ -1,8 +1,8 @@
 <?php
 $links = array(
-    'vocab' => '/' . 'LearningThroughManga' . '/vocabulary/index.php',
-    'manga' => '/' . 'LearningThroughManga' . '/manga/index.php',
-    'blog'  => '/' . 'LearningThroughManga' . '/blog/index.php'
+    'vocab' => '/vocabulary/index.php',
+    'manga' => '/manga/index.php',
+    'blog'  => '/blog/index.php'
 );
 ?>
 <nav class="navbar navbar-default navbar-static-top">
