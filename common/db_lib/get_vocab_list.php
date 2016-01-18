@@ -17,7 +17,7 @@ function get_vocab_list( $options = array( 'offset' => 0, 'limit' => 20 ) )
 
     global $pdo;
 
-    $query = "SELECT vocab, manga_context, english, korean, english_definition, korean_definition FROM tb_vocab OFFSET ? LIMIT ?";
+    $statement = "SELECT vocab, manga_context, english, korean, english_definition, korean_definition FROM tb_vocab OFFSET ? LIMIT ?;";
     $sth = $pdo->prepare( $statement, array( $offset, $limit ) );
     $sth->execute();
 

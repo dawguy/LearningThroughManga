@@ -2,7 +2,7 @@
 
 require_once( $_SERVER['DOCUMENT_ROOT'] . '/common/functions/db_lib.php' );
 
-function get_manga_list( $options = array( 'offset' => 0, 'limit' => 20 ) )
+function get_manga_context_list( $options = array( 'offset' => 0, 'limit' => 20 ) )
 {
     if( !is_array( $options ) || 
         !isset( $options['offset'] ) ||
@@ -17,7 +17,7 @@ function get_manga_list( $options = array( 'offset' => 0, 'limit' => 20 ) )
 
     global $pdo;
 
-    $statement = "SELECT manga, english_title, korean_title, source, english_description, korean_description, rating, manga_tags FROM tb_manga OFFSET ? LIMIT ?;";
+    $statement = "SELECT manga_context, manga, path, meaning, context, usage FROM tb_manga_context OFFSET ? LIMIT ?;";
     $sth = $pdo->prepare( $statement, array( $offset, $limit ) );
     $sth->execute();
 
