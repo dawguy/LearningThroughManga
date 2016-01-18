@@ -1,0 +1,23 @@
+<?php
+
+require_once( $_SERVER['DOCUMENT_ROOT'] . '/common/functions/db_lib.php' );
+
+$pdo = new PDO( 'mysql:host=localhost;dbname=manga;', 'root', '' );
+
+
+function get_tags()
+{
+    $statement = "SELECT t.tags, t.english_tag, t.korean_tag FROM tb_tags";
+
+    $sth = $pdo->prepare( $statement );
+
+    $pdo->execute();
+
+    $pdo->get_val();
+
+    $db = new manga_db();
+    $query = "SELECT t.tags, t.english_tag, t.korean_tag FROM tb_tags";
+    $retval = $db->query_select( $query );
+
+    return $retval;
+}
