@@ -13,11 +13,9 @@ if( isset( $_REQUEST['manga_image'] ) &&
     isset( $_REQUEST['tags'] )
   )
 {
-    error_log( 'Inserting new manga!' );
     //Handle Image
     $image_pk = upload_image( $_REQUEST['manga_image'] );
     $rating = intval( $_REQUEST['rating'], 10 );
-    error_log( 'Image uploaded!' );
 
     $manga_pk = create_manga( $image_pk,
                   $_REQUEST['english_title'],
@@ -29,13 +27,9 @@ if( isset( $_REQUEST['manga_image'] ) &&
                   $_REQUEST['english_title']
                 );
 
-    error_log( 'Manga created!' );
-         
     foreach( $_REQUEST['tags'] as $tag )
     {
         $tag_pk = intval( $tag, 10 );
         create_manga_tag( $manga_pk, $tag_pk );
     }
-
-    error_log( 'Tags added!' );
 }

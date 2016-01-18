@@ -11,7 +11,7 @@
         <? require_once( $_SERVER['DOCUMENT_ROOT'] . '/common/includes/header.php' ); ?>
         
         <div class="container">
-            <form class="form-horizontal">
+            <form class="form-horizontal" action="proc/add_tag.php" method="post">
                 <div class="form-group">
                     <label for="english_tag" class="col-sm-2 form-label">English Tag</label>
                     <div class="col-sm-10">
@@ -21,12 +21,12 @@
                 <div class="form-group">
                     <label for="korean_tag" class="col-sm-2 form-label">Korean Tag</label>
                     <div class="col-sm-10">
-                        <input id="korean_tag" name="korean_tag" type="file" class="form-control" placeholder="Korean Tag">
+                        <input id="korean_tag" name="korean_tag" type="text" class="form-control" placeholder="Korean Tag">
                     </div>
                 </div> 
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
-                        <button type="submit" class="btn btn-default">Submit</button>
+                        <input type="submit" class="btn btn-default" value="Submit"></input>
                     </div>
                 </div>
             </form>

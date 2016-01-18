@@ -6,7 +6,7 @@ function create_manga( $image, $english_title, $korean_title, $source, $english_
 {
     global $pdo;
 
-    $statement = "INSERT INTO tb_manga (image, english_title, korean_title, english_description, korean_description, rating) VALUES ( :image, :english_title, :korean_title, :source, :english_description, :korean_description, :rating )";
+    $statement = "INSERT INTO tb_manga (image, english_title, korean_title, source, english_description, korean_description, rating) VALUES ( :image, :english_title, :korean_title, :source, :english_description, :korean_description, :rating )";
 
     $sth = $pdo->prepare( $statement );
     $sth->bindParam( ':image', $image );

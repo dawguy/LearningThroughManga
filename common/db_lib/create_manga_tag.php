@@ -6,11 +6,11 @@ function create_manga_tag( $manga, $tag )
 {
     global $pdo;
 
-    $statement = "INSERT INTO tb_manga_tag ( manga, tag) VALUES ( :manga, :tag );";
+    $statement = "INSERT INTO tb_manga_tags( manga, tags ) VALUES ( :manga, :tags );";
 
     $sth = $pdo->prepare( $statement );
     $sth->bindParam( ':manga', $manga );
-    $sth->bindParam( ':tag', $tag );
+    $sth->bindParam( ':tags', $tag );
 
     $retval = $sth->execute();
 
