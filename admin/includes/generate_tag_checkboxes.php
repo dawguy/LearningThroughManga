@@ -25,7 +25,7 @@ function generate_tag_checkbox( $tag )
 ?>
     <div class="checkbox">
         <label>
-            <input type="checkbox" value="<?= $tag['tags'] ?>">
+            <input type="checkbox" id="tag_<?= $tag['tags'] ?>" name="tags[]" value="<?= $tag['tags'] ?>">
             <?= $tag['english_tag'] ?>
         </label>
     </div>

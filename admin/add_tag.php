@@ -15,13 +15,13 @@
                 <div class="form-group">
                     <label for="english_tag" class="col-sm-2 form-label">English Tag</label>
                     <div class="col-sm-10">
-                        <input id="english_tag" type="text" class="form-control" placeholder="English Tag">
+                        <input id="english_tag" name="english_tag" type="text" class="form-control" placeholder="English Tag">
                     </div>
                 </div> 
                 <div class="form-group">
                     <label for="korean_tag" class="col-sm-2 form-label">Korean Tag</label>
                     <div class="col-sm-10">
-                        <input id="korean_tag" type="file" class="form-control" placeholder="Korean Tag">
+                        <input id="korean_tag" name="korean_tag" type="file" class="form-control" placeholder="Korean Tag">
                     </div>
                 </div> 
                 <div class="form-group">

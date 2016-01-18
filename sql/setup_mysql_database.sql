@@ -8,7 +8,7 @@ DROP TABLE IF EXISTS tb_manga;
 
 CREATE TABLE  tb_manga(
     manga INT NOT NULL AUTO_INCREMENT,
-    image VARCHAR(100),
+    image INT,
     english_title VARCHAR(50) NOT NULL,
     korean_title VARCHAR(50) NOT NULL,
     source VARCHAR(200),

@@ -15,7 +15,7 @@
                 <div class="form-group">
                     <label for="manga_context" class="col-sm-2 form-label">Manga Context</label>
                     <div class="col-sm-10">
-                        <select id="manga_context" class="form-control">
+                        <select id="manga_context" name="manga_context" class="form-control">
                             <? generate_manga_context_options() ?>
                         </select>
                     </div>
@@ -23,31 +23,31 @@
                 <div class="form-group">
                     <label for="path" class="col-sm-2 form-label">Path</label>
                     <div class="col-sm-10">
-                        <input id="path" type="text" class="form-control" placeholder="Path">
+                        <input id="path" name="path" type="text" class="form-control" placeholder="Path">
                     </div>
                 </div> 
                 <div class="form-group">
                     <label for="english" class="col-sm-2 form-label">English</label>
                     <div class="col-sm-10">
-                        <input id="english" type="text" class="form-control" placeholder="English">
+                        <input id="english" name="english" type="text" class="form-control" placeholder="English">
                     </div>
                 </div> 
                 <div class="form-group">
                     <label for="korean" class="col-sm-2 form-label">Korean</label>
                     <div class="col-sm-10">
-                        <input id="korean" type="text" class="form-control" placeholder="Korean">
+                        <input id="korean" name="korean" type="text" class="form-control" placeholder="Korean">
                     </div>
                 </div> 
                 <div class="form-group">
                     <label for="english_definition" class="col-sm-2 form-label">English Definition</label>
                     <div class="col-sm-10">
-                        <input id="english_definition" type="text" class="form-control" placeholder="English Definition">
+                        <input id="english_definition" name="english_definition" type="text" class="form-control" placeholder="English Definition">
                     </div>
                 </div> 
                 <div class="form-group">
                     <label for="korean_definition" class="col-sm-2 form-label">Korean Definition</label>
                     <div class="col-sm-10">
-                        <input id="korean_definition" type="text" class="form-control" placeholder="Korean Definition">
+                        <input id="korean_definition" name="korean_definition" type="text" class="form-control" placeholder="Korean Definition">
                     </div>
                 </div> 
                 <div class="form-group">

@@ -15,7 +15,7 @@
                 <div class="form-group">
                     <label for="manga" class="col-sm-2 form-label">Manga</label>
                     <div class="col-sm-10">
-                        <select id="manga" class="form-control">
+                        <select id="manga" name="manga" class="form-control">
                             <? generate_manga_options() ?>
                         </select>
                     </div>
@@ -23,31 +23,31 @@
                 <div class="form-group">
                     <label for="path" class="col-sm-2 form-label">Path</label>
                     <div class="col-sm-10">
-                        <input id="path" type="text" class="form-control" placeholder="Path">
+                        <input id="path" name="path" type="text" class="form-control" placeholder="Path">
                     </div>
                 </div> 
                 <div class="form-group">
                     <label for="manga_context_image" class="col-sm-2 form-label">Manga Context Image</label>
                     <div class="col-sm-10">
-                        <input id="manga_context_image" type="file" class="form-control" placeholder="Manga Context Image">
+                        <input id="manga_context_image" name="manga_context_image" type="file" class="form-control" placeholder="Manga Context Image">
                     </div>
                 </div> 
                 <div class="form-group">
                     <label for="meaning" class="col-sm-2 form-label">Meaning</label>
                     <div class="col-sm-10">
-                        <input id="meaning" type="text" class="form-control" placeholder="Meaning">
+                        <input id="meaning" name="meaning" type="text" class="form-control" placeholder="Meaning">
                     </div>
                 </div> 
                 <div class="form-group">
                     <label for="context" class="col-sm-2 form-label">Context</label>
                     <div class="col-sm-10">
-                        <input id="context" type="text" class="form-control" placeholder="Context">
+                        <input id="context" name="context" type="text" class="form-control" placeholder="Context">
                     </div>
                 </div> 
                 <div class="form-group">
                     <label for="translation" class="col-sm-2 form-label">Translation</label>
                     <div class="col-sm-10">
-                        <input id="translation" type="text" class="form-control" placeholder="Translation">
+                        <input id="translation" name="translation" type="text" class="form-control" placeholder="Translation">
                     </div>
                 </div> 
                 <div class="form-group">

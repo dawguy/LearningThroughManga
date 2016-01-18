@@ -6,7 +6,7 @@ function get_manga( $pk_manga )
 {
     global $pdo;
 
-    $statement = "SELECT manga, english_title, korean_title, source, english_description, korean_description, rating, manga_tags FROM tb_manga WHERE manga = ?;";
+    $statement = "SELECT manga, english_title, korean_title, source, english_description, korean_description, rating FROM tb_manga WHERE manga = ?;";
     $sth = $pdo->prepare( $statement, array( $pk_manga ) );
     $sth->execute();
 
