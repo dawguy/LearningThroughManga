@@ -1,9 +1,4 @@
 <?php
-    require_once( $_SERVER['DOCUMENT_ROOT'] . '/common/db_lib/get_tags.php' );
-    require_once( 'includes/generate_tag_checkboxes.php' );
-
-    $tags = get_tags();
-
 ?>
 
 <html>
@@ -14,6 +9,13 @@
     </head>
     <body>
         <? require_once( $_SERVER['DOCUMENT_ROOT'] . '/common/includes/header.php' ); ?>
-            
+        <div class="container">
+            <ul class="list">
+                <li><a href="/admin/add_manga.php">Add Manga</a></li>
+                <li><a href="/admin/add_manga_context.php">Add Manga Context</a></li>
+                <li><a href="/admin/add_tag.php">Add Tag</a></li>
+                <li><a href="/admin/add_vocab.php">Add Vocab</a></li>
+            </ul>
+        </div>
     </body>
 </html>
