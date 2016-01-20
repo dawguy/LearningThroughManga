@@ -17,8 +17,11 @@ function get_manga_context_list( $options = array( 'offset' => 0, 'limit' => 20 
 
     global $pdo;
 
-    $statement = "SELECT manga_context, manga, path, meaning, context, usage FROM tb_manga_context OFFSET ? LIMIT ?;";
-    $sth = $pdo->prepare( $statement, array( $offset, $limit ) );
+    $statement = "SELECT manga_context, manga, image, path, meaning, context, translation FROM tb_manga_context LIMIT :limit OFFSET :offset ";
+    $sth = $pdo->prepare( $statement );
+    $sth->bindValue( ':limit', (int)$limit, PDO::PARAM_INT);
+    $sth->bindValue( ':offset', (int)$offset, PDO::PARAM_INT );
+
     $sth->execute();
 
     $retval = $sth->fetchAll();

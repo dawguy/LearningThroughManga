@@ -6,8 +6,11 @@ function get_manga( $pk_manga )
 {
     global $pdo;
 
-    $statement = "SELECT manga, english_title, korean_title, source, english_description, korean_description, rating FROM tb_manga WHERE manga = ?;";
-    $sth = $pdo->prepare( $statement, array( $pk_manga ) );
+    $pk_manga = intval( $pk_manga, 10 );
+
+    $statement = "SELECT manga, english_title, korean_title, source, english_description, korean_description, rating FROM tb_manga WHERE manga = :manga";
+    $sth = $pdo->prepare( $statement );
+    $sth->bindValue( ':manga', (int)$pk_manga, PDO::PARAM_INT);
     $sth->execute();
 
     $retval = $sth->fetchAll();

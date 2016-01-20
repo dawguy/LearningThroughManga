@@ -17,8 +17,10 @@ function get_vocab_list( $options = array( 'offset' => 0, 'limit' => 20 ) )
 
     global $pdo;
 
-    $statement = "SELECT vocab, manga_context, english, korean, english_definition, korean_definition FROM tb_vocab OFFSET ? LIMIT ?;";
-    $sth = $pdo->prepare( $statement, array( $offset, $limit ) );
+    $statement = "SELECT vocab, manga_context, english, korean, english_definition, korean_definition FROM tb_vocab LIMIT :limit OFFSET :offset";
+    $sth = $pdo->prepare( $statement );
+    $sth->bindValue( ':limit', (int)$limit, PDO::PARAM_INT);
+    $sth->bindValue( ':offset', (int)$offset, PDO::PARAM_INT );
     $sth->execute();
 
     $retval = $sth->fetchAll();

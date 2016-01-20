@@ -11,7 +11,7 @@
     <body>
         <? require_once( $_SERVER['DOCUMENT_ROOT'] . '/common/includes/header.php' ); ?>
         <div class="container"> 
-            <form class="form-horizontal">
+            <form class="form-horizontal" method="post" action="proc/add_vocab.php">
                 <div class="form-group">
                     <label for="manga_context" class="col-sm-2 form-label">Manga Context</label>
                     <div class="col-sm-10">
@@ -52,7 +52,7 @@
                 </div> 
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
-                        <button type="submit" class="btn btn-default">Submit</button>
+                        <input type="submit" class="btn btn-default" value="submit"></input>
                     </div>
                 </div>
             </form>

@@ -6,8 +6,11 @@ function get_tags_by_manga( $manga )
 {
     global $pdo;
 
-    $statement = "SELECT t.tags, t.english_tag, t.korean_tag FROM tb_tags t JOIN tb_manga_tags mt ON t.tags = mt.tags WHERE mt.manga = ?";
-    $sth = $pdo->prepare( $statement, array( $manga ) );
+    $pk_manga = intval( $manga, 10 );
+
+    $statement = "SELECT t.tags, t.english_tag, t.korean_tag FROM tb_tags t JOIN tb_manga_tags mt ON t.tags = mt.tags WHERE mt.manga = :manga";
+    $sth = $pdo->prepare( $statement );
+    $sth->bindValue( ':manga', (int)$pk_manga, PDO::PARAM_INT);
     $sth->execute();
 
     $retval = $sth->fetchAll();

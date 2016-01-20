@@ -11,7 +11,7 @@
     <body>
         <? require_once( $_SERVER['DOCUMENT_ROOT'] . '/common/includes/header.php' ); ?>
         <div class="container"> 
-            <form class="form-horizontal">
+            <form class="form-horizontal" method="post" action="proc/add_manga_context.php">
                 <div class="form-group">
                     <label for="manga" class="col-sm-2 form-label">Manga</label>
                     <div class="col-sm-10">
@@ -27,9 +27,9 @@
                     </div>
                 </div> 
                 <div class="form-group">
-                    <label for="manga_context_image" class="col-sm-2 form-label">Manga Context Image</label>
+                    <label for="image" class="col-sm-2 form-label">Manga Context Image</label>
                     <div class="col-sm-10">
-                        <input id="manga_context_image" name="manga_context_image" type="file" class="form-control" placeholder="Manga Context Image">
+                        <input id="image" name="image" type="file" class="form-control" placeholder="Manga Context Image">
                     </div>
                 </div> 
                 <div class="form-group">
@@ -52,7 +52,7 @@
                 </div> 
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
-                        <button type="submit" class="btn btn-default">Submit</button>
+                        <input type="submit" class="btn btn-default" value="Submit"></input>
                     </div>
                 </div>
             </form>

@@ -5,6 +5,8 @@ function generate_manga_context_options()
 {
     $manga_contexts = get_manga_context_list();
 
+    error_log( print_r( $manga_contexts, true ) );
+
     if( count( $manga_contexts ) === 0 )
     {
 ?>
