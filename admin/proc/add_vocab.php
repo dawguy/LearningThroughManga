@@ -8,8 +8,6 @@ if( isset( $_REQUEST['manga_context'] ) &&
     isset( $_REQUEST['korean_definition'] )
   )
 {
-    $image_pk = upload_image( $_REQUEST['image'] );
-
     $vocab_pk = create_vocab(
                   $_REQUEST['manga_context'],
                   $_REQUEST['english'],

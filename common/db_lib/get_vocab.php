@@ -6,8 +6,11 @@ function get_vocab( $pk_vocab )
 {
     global $pdo;
 
-    $statement = "SELECT vocab, manga_context, english, korean, english_definition, korean_definition FROM tb_vocab WHERE vocab = ?;";
-    $sth = $pdo->prepare( $statement, array( $pk_vocab ) );
+    $pk_vocab = intval( $pk_vocab, 10 );
+
+    $statement = "SELECT vocab, manga_context, english, korean, english_definition, korean_definition FROM tb_vocab WHERE vocab = :vocab";
+    $sth = $pdo->prepare( $statement );
+    $sth->bindValue( ':vocab', $pk_vocab );
     $sth->execute();
 
     $retval = $sth->fetchAll();
