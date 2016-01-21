@@ -17,6 +17,7 @@ function generate_manga_rows( $manga_list )
 function generate_manga_row( $pk_manga )
 {
     $manga = get_manga( $pk_manga );
+
     if( !is_array( $manga ) )
     {
         return;

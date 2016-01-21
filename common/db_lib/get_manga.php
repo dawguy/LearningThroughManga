@@ -15,5 +15,10 @@ function get_manga( $pk_manga )
 
     $retval = $sth->fetchAll();
 
+    if( is_array( $retval ) )
+    {
+        $retval = $retval[0];
+    }
+
     return $retval;
 }

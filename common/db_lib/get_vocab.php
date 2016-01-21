@@ -15,5 +15,10 @@ function get_vocab( $pk_vocab )
 
     $retval = $sth->fetchAll();
 
+    if( is_array( $retval ) )
+    {
+        $retval = $retval[0];
+    }
+
     return $retval;
 }
